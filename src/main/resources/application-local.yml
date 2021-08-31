@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/domain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  webflux:
+    base-path: /domain
+jet:
+  jdbc:
+    url: jdbc:mysql://root:root@localhost:3306/domain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+  kafka:
+    bootstrap_servers: localhost:9092

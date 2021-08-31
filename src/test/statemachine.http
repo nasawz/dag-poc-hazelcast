@@ -1,0 +1,162 @@
+### 保存
+POST http://localhost:2021/domain/demo/v2/job/deploy
+Content-Type: application/json
+
+{
+  "id": "3",
+  "name": "DAG 有向无环- v3",
+  "graph": {
+    "nodes": [
+      {
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629785605914_out_1"
+          }
+        ],
+        "data": {
+          "constant": "3.3"
+        },
+        "name": "income1.amount",
+        "inPorts": [],
+        "positionX": -1490,
+        "positionY": -450,
+        "status": 3,
+        "x": -1360,
+        "codeName": "constant",
+        "y": -440,
+        "type": "node",
+        "groupId": 0,
+        "id": "s",
+        "category": 1
+      },
+      {
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629785605914_out_1"
+          }
+        ],
+        "data": {
+          "code": "a"
+        },
+        "name": "income1.amount",
+        "inPorts": [],
+        "positionX": -1490,
+        "positionY": -450,
+        "status": 3,
+        "x": -1360,
+        "codeName": "table_field",
+        "y": -440,
+        "type": "node",
+        "groupId": 0,
+        "id": "a",
+        "category": 1
+      },
+      {
+        "outPorts": [],
+        "data": {
+          "code": "b"
+        },
+        "name": "sum",
+        "inPorts": [
+          {
+            "sequence": 1,
+            "description": "输入",
+            "id": "1629788367871_in_1"
+          },
+          {
+            "sequence": 2,
+            "description": "输入",
+            "id": "1629788367871_in_2"
+          }
+        ],
+        "positionX": -1330,
+        "positionY": -280,
+        "status": 3,
+        "x": -1360,
+        "codeName": "source_sum",
+        "y": -240,
+        "type": "node",
+        "groupId": 0,
+        "id": "b",
+        "category": 3
+      },
+      {
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629856911831_out_1"
+          }
+        ],
+        "data": {
+          "express": "#s_a + #s_b + #s_a * #s_b",
+          "code": "c"
+        },
+        "name": "income2.cost",
+        "inPorts": [],
+        "positionX": -1181,
+        "positionY": -448,
+        "status": 3,
+        "x": -1220,
+        "codeName": "table_field",
+        "y": -440,
+        "type": "node",
+        "groupId": 0,
+        "id": "c",
+        "category": 1
+      },
+      {
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629856911831_out_1"
+          }
+        ],
+        "data": {
+          "express": "#s_c + #s_s"
+        },
+        "name": "income2.cost",
+        "inPorts": [],
+        "positionX": -1181,
+        "positionY": -448,
+        "status": 3,
+        "x": -1220,
+        "codeName": "table_field",
+        "y": -440,
+        "type": "node",
+        "groupId": 0,
+        "id": "d",
+        "category": 1
+      }
+    ],
+    "links": [
+      {
+        "source": "a",
+        "target": "c"
+      },
+      {
+        "source": "b",
+        "target": "c"
+      },
+      {
+        "source": "c",
+        "target": "d"
+      },
+      {
+        "source": "s",
+        "target": "d"
+      }
+    ]
+  }
+}
+
+### 部署
+PUT http://localhost:2021/domain/demo/v2/job/3/execute
+
+### 部署
+PUT http://192.168.x.xxx:2021/domain/demo/v2/job/1/execute

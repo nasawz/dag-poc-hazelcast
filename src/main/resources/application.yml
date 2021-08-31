@@ -1,0 +1,22 @@
+server:
+  port: 2021
+spring:
+#  profiles:
+#    active: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.x.xxx:3306/domain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: domain
+    password: d1o2m3a4i5n6
+  webflux:
+    base-path: /domain
+  main:
+    allow-bean-definition-overriding: true
+jet:
+  jdbc:
+    url: jdbc:mysql://domain:d1o2m3a4i5n6@192.168.x.xxx:3306/domain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+  kafka:
+    bootstrap_servers: 192.168.x.xxx:9092
+mybatis-plus:
+  mapper-locations: classpath:/com/palline/domain/**/*.xml
+

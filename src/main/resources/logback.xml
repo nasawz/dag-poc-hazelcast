@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" packagingData="true">
+  <!--  console-->
+  <appender name="highlight-console"
+    class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss} %-5level [%thread] %c %M %n %highlight(%message%n)</pattern>
+    </encoder>
+  </appender>
+
+<!--  &lt;!&ndash;  dao&ndash;&gt;-->
+<!--  <logger name="com.palline.domain" level="debug">-->
+<!--  </logger>-->
+
+  <!--  root-->
+  <root level="info">
+    <appender-ref ref="highlight-console"/>
+  </root>
+
+</configuration>

@@ -1,0 +1,75 @@
+{
+  "id": 1,
+  "name": "计算器引擎POC",
+  "graph": {
+    "nodes": [
+      {
+        "id": "1629962358706",
+        "name": "系数",
+        "positionX": -2352,
+        "positionY": -604,
+        "codeName": "constant",
+        "category": 3,
+        "status": 3,
+        "groupId": 0,
+        "inPorts": [],
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629962358706_out_1"
+          }
+        ],
+        "data": {
+          "constant": 100
+        },
+        "type": "node",
+        "x": -2352,
+        "y": -604
+      },
+      {
+        "id": "1629963025921",
+        "name": "表达式",
+        "positionX": -2328,
+        "positionY": -476,
+        "codeName": "express",
+        "category": 3,
+        "status": 3,
+        "groupId": 0,
+        "inPorts": [
+          {
+            "sequence": 1,
+            "description": "输入",
+            "id": "1629963025921_in_1"
+          },
+          {
+            "sequence": 2,
+            "description": "输入",
+            "id": "1629963025921_in_2"
+          }
+        ],
+        "outPorts": [
+          {
+            "sequence": 1,
+            "description": "输出",
+            "id": "1629963025921_out_1"
+          }
+        ],
+        "data": {
+          "express": "#s_1629962358706 + #s_1629962358706 "
+        },
+        "type": "node",
+        "x": -2328,
+        "y": -476
+      }
+    ],
+    "links": [
+      {
+        "source": "1629962358706",
+        "target": "1629963025921",
+        "outputPortId": "1629962358706_out_1",
+        "inputPortId": "1629963025921_in_1"
+      }
+    ]
+  }
+}
